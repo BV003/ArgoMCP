@@ -5,8 +5,6 @@ from logTitle import logTitle
 from EmbeddingRetriver import EmbeddingRetriever
 
 
-os.environ["HTTP_PROXY"] = "http://127.0.0.1:7890"
-os.environ["HTTPS_PROXY"] = "http://127.0.0.1:7890" 
 
 emb_model = os.getenv("EMBEDDING_MODEL")
 current_dir = os.getcwd()
