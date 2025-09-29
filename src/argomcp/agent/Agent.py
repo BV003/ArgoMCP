@@ -13,7 +13,7 @@ class Agent():
         self.log_context = LogContext()
         
     async def init(self):
-        self.log_context.add_message("Agent", "Initializing MCP clients and collecting tools...")
+        self.log_context.log_print(f"TOOLS")
         logTitle('TOOLS')
         for mcp in self.mcpClients:
             await mcp.init()
@@ -52,8 +52,9 @@ class Agent():
                     
                     if mcp:
                         logTitle("TOOL USE")
-                        self.log_context.add_message("Agent", f"Calling tool: {tool_call['function']['name']} with arguments: {tool_call['function']['arguments']}")
+                        self.log_context.log_print(f"Calling tool: {tool_call['function']['name']}")
                         print(f"Calling tool: {tool_call['function']['name']}")
+                        self.log_context.log_print(f"Arguments: {tool_call['function']['arguments']}")
                         print(f"Arguments: {tool_call['function']['arguments']}")
                         
                         import json
@@ -75,8 +76,9 @@ class Agent():
                         else:
                             result_str = str(result)
                             
-                        self.log_context.add_message("Tool Result", f"Result from {tool_call['function']['name']}: {result_str}")
+                        
                         print(f"Result: {result_str}")
+                        self.log_context.log_print(f"Result: {result_str}")
                         self.llm.appendToolResult(tool_call['id'], result_str)
                     else: 
                         self.llm.appendToolResult(tool_call['id'], 'Tool not found')
@@ -87,5 +89,5 @@ class Agent():
             
             # 没有工具调用，结束对话
             await self.close()
-            self.log_context.add_message("Agent", response['content'])
+            self.log_context.log_print(f"Final response: {response['content']}")
             return response['content']

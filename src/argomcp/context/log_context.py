@@ -6,6 +6,9 @@ class LogContext:
     def __init__(self):
         self.history = []
 
+    def log_print(self, content):
+        self.history.append({content})
+
     def add_message(self, role, content):
         self.history.append({"role": role, "content": content})
     
