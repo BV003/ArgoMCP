@@ -2,14 +2,16 @@ import openai
 from openai import OpenAI
 import dotenv
 import os
-from logTitle import logTitle
+from argomcp.utils.logTitle import logTitle
+import asyncio  # 需要导入asyncio模块
+
 
 dotenv.load_dotenv()
 
-class ChatOpenAI():
+class ChatDoubao():
     def __init__(self, model_name: str, tools = [], system_prompt: str = "", context: str = ""):
-        api_key = os.getenv("API_KEY")
-        base_url = os.getenv("BASE_URL")
+        api_key=os.getenv("ARK_API_KEY")
+        base_url=os.getenv("DOUBAO_BASE_URL", "https://ark.cn-beijing.volces.com/api/v3")
         self.model = model_name
         self.tools = tools
         self.system_prompt = system_prompt
@@ -86,8 +88,14 @@ class ChatOpenAI():
             } for tool in self.tools
         ]
         
-if __name__ == '__main__':
-    prompt = "你是谁"
-    llm = ChatOpenAI("openai/GPT-4o-mini")
-    res = llm.chat(prompt=prompt)
-    print(res)
+# if __name__ == '__main__':
+#     # 异步主函数
+#     async def main():
+#         prompt = "你是谁"
+#         llm = ChatDoubao("doubao-1-5-lite-32k-250115")
+#         # 异步调用需要加await
+#         res = await llm.chat(prompt=prompt)
+#         print(res)
+    
+#     # 运行异步主函数
+#     asyncio.run(main())

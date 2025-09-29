@@ -1,5 +1,7 @@
-from logTitle import logTitle
-from ChatOpenAI import ChatOpenAI
+from argomcp.utils.logTitle import logTitle
+from argomcp.llm.ChatDoubao import ChatDoubao
+import asyncio
+import gc
 
 
 
@@ -21,7 +23,7 @@ class Agent():
         for client in self.mcpClients:
             all_tools.extend(client.get_tools())
 
-        self.llm = ChatOpenAI(self.model, system_prompt=self.sys_prompt, tools=all_tools, context=self.context)
+        self.llm = ChatDoubao(self.model, system_prompt=self.sys_prompt, tools=all_tools, context=self.context)
         
     async def close(self):
         for mcp in self.mcpClients:
@@ -29,6 +31,7 @@ class Agent():
                 await mcp.close()
             except Exception as e:
                 print(f"Warning: Error closing MCP client: {e}")
+
         
     async def invoke(self, prompt: str):
         if not self.llm:

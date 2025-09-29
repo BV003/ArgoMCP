@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]  # 确保setuptools版本足够新
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "argomcp"
+version = "0.1.0"
+requires-python = ">=3.3"  # 明确支持Python 3.3+（隐式包的最低要求）
+dependencies = [
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[tool.setuptools.package-dir]
+"" = "src"  # 包的根目录在src下（和setup.py的package_dir一致）
