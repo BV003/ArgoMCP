@@ -26,6 +26,7 @@ async def main():
     await agent.init()
     logTitle("init Agent finish")
     response = await agent.invoke(TASK)
+    agent.log_context.save_to_file()
     return response
 
 

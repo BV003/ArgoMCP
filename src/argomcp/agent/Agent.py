@@ -1,19 +1,19 @@
 from argomcp.utils.logTitle import logTitle
 from argomcp.llm.ChatDoubao import ChatDoubao
 import asyncio
-import gc
-
-
+from argomcp.context.log_context import LogContext
 
 class Agent():  
-    def __init__(self, model, mcpClients, sysprompt="", context="") -> None:
+    def __init__(self, model, mcpClients, sysprompt="", context="", log_context=None) -> None:
         self.mcpClients = mcpClients  
         self.model = model
         self.sys_prompt = sysprompt
         self.context = context
         self.llm = None
+        self.log_context = LogContext()
         
     async def init(self):
+        self.log_context.add_message("Agent", "Initializing MCP clients and collecting tools...")
         logTitle('TOOLS')
         for mcp in self.mcpClients:
             await mcp.init()
@@ -52,6 +52,7 @@ class Agent():
                     
                     if mcp:
                         logTitle("TOOL USE")
+                        self.log_context.add_message("Agent", f"Calling tool: {tool_call['function']['name']} with arguments: {tool_call['function']['arguments']}")
                         print(f"Calling tool: {tool_call['function']['name']}")
                         print(f"Arguments: {tool_call['function']['arguments']}")
                         
@@ -74,6 +75,7 @@ class Agent():
                         else:
                             result_str = str(result)
                             
+                        self.log_context.add_message("Tool Result", f"Result from {tool_call['function']['name']}: {result_str}")
                         print(f"Result: {result_str}")
                         self.llm.appendToolResult(tool_call['id'], result_str)
                     else: 
@@ -85,4 +87,5 @@ class Agent():
             
             # 没有工具调用，结束对话
             await self.close()
+            self.log_context.add_message("Agent", response['content'])
             return response['content']
