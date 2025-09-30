@@ -2,16 +2,16 @@
 <div align="center">
 
 <!-- Keep these links. Translations will automatically update with the README. -->
-[Deutsch](https://zdoc.app/de/BV003/LilRag) | 
-[English](https://zdoc.app/en/BV003/LilRag) | 
-[Español](https://zdoc.app/es/BV003/LilRag) | 
-[français](https://zdoc.app/fr/BV003/LilRag) | 
-[日本語](https://zdoc.app/ja/BV003/LilRag) | 
-[한국어](https://zdoc.app/ko/BV003/LilRag) | 
-[Português](https://zdoc.app/pt/BV003/LilRag) | 
-[Русский](https://zdoc.app/ru/BV003/LilRag) | 
-[中文](https://zdoc.app/zh/BV003/LilRag)
-</div>
+[Deutsch](https://zdoc.app/de/BV003/ArgoMCP) | 
+[English](https://zdoc.app/en/BV003/ArgoMCP) | 
+[Español](https://zdoc.app/es/BV003/ArgoMCP) | 
+[français](https://zdoc.app/fr/BV003/ArgoMCP) | 
+[日本語](https://zdoc.app/ja/BV003/ArgoMCP) | 
+[한국어](https://zdoc.app/ko/BV003/ArgoMCP) | 
+[Português](https://zdoc.app/pt/BV003/ArgoMCP) | 
+[Русский](https://zdoc.app/ru/BV003/ArgoMCP) | 
+[中文](https://zdoc.app/zh/BV003/ArgoMCP)
+<div align="center">
 
 ### 🚀 Introduction
 
