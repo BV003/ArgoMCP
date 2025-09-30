@@ -13,7 +13,7 @@
 [Русский](https://zdoc.app/ru/BV003/ArgoMCP) | 
 [中文](https://zdoc.app/zh/BV003/ArgoMCP)
 
-<div align="center">
+</div>
 
 
 ### 🚀 Introduction
