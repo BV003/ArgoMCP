@@ -4,7 +4,7 @@ import asyncio
 from argomcp.context.log_context import LogContext
 
 class Agent():  
-    def __init__(self, model, mcpClients, sysprompt="", context="", log_context=None) -> None:
+    def __init__(self, model, mcpClients, sysprompt="", context="") -> None:
         self.mcpClients = mcpClients  
         self.model = model
         self.sys_prompt = sysprompt

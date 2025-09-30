@@ -8,4 +8,4 @@ log_dir="./logs"
 mkdir -p "$log_dir"
 
 # 运行 Python 脚本并重定向输出
-python examples/main.py > "$log_dir/$timestamp.log" 2>&1
+python examples/demo1.py > "$log_dir/$timestamp.log" 2>&1
