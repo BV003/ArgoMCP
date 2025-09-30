@@ -10,10 +10,10 @@ class Agent():
         self.sys_prompt = sysprompt
         self.context = context
         self.llm = None
-        self.log_context = LogContext()
+        # self.log_context = LogContext()
         
     async def init(self):
-        self.log_context.log_print(f"TOOLS")
+        # self.log_context.log_print(f"TOOLS")
         logTitle('TOOLS')
         for mcp in self.mcpClients:
             await mcp.init()
@@ -52,9 +52,9 @@ class Agent():
                     
                     if mcp:
                         logTitle("TOOL USE")
-                        self.log_context.log_print(f"Calling tool: {tool_call['function']['name']}")
+                        # self.log_context.log_print(f"Calling tool: {tool_call['function']['name']}")
                         print(f"Calling tool: {tool_call['function']['name']}")
-                        self.log_context.log_print(f"Arguments: {tool_call['function']['arguments']}")
+                        # self.log_context.log_print(f"Arguments: {tool_call['function']['arguments']}")
                         print(f"Arguments: {tool_call['function']['arguments']}")
                         
                         import json
@@ -78,7 +78,7 @@ class Agent():
                             
                         
                         print(f"Result: {result_str}")
-                        self.log_context.log_print(f"Result: {result_str}")
+                        # self.log_context.log_print(f"Result: {result_str}")
                         self.llm.appendToolResult(tool_call['id'], result_str)
                     else: 
                         self.llm.appendToolResult(tool_call['id'], 'Tool not found')
@@ -89,5 +89,5 @@ class Agent():
             
             # 没有工具调用，结束对话
             await self.close()
-            self.log_context.log_print(f"Final response: {response['content']}")
+            # self.log_context.log_print(f"Final response: {response['content']}")
             return response['content']
