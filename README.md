@@ -127,8 +127,8 @@ classDiagram
 ### ⚡ Quick Start
 Clone the Repository
 ```
-git clone https://github.com/BV003/LilRag.git
-cd LilRag
+git clone https://github.com/BV003/ArgoMCP.git
+cd ArgoMCP
 ```
 Create and Activate Virtual Environment. We recommend using conda for dependency management.
 ```
