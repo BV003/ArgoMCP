@@ -8,7 +8,6 @@ from agno.agent import Agent
 from agno.models.openai import OpenAIChat
 from agno.tools.mcp import MCPTools 
 from agno.memory.v2.memory import Memory
-from agno.memory.v2.db.sqlite import SqliteMemoryDb
 from mcp import StdioServerParameters
 from dotenv import load_dotenv
 

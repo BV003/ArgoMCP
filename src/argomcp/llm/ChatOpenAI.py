@@ -2,7 +2,7 @@ import openai
 from openai import OpenAI
 import dotenv
 import os
-from logTitle import logTitle
+from argomcp.utils.logTitle import logTitle
 
 dotenv.load_dotenv()
 
