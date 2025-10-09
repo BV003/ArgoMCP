@@ -7,7 +7,7 @@ from textwrap import dedent
 from agno.agent import Agent 
 from agno.models.openai import OpenAIChat
 from agno.tools.mcp import MCPTools 
-from agno.memory.v2.memory import Memory
+# from agno.memory.v2.memory import Memory
 from mcp import StdioServerParameters
 from dotenv import load_dotenv
 
@@ -97,9 +97,9 @@ async def main():
                 The user's current page ID is: {page_id}
             """),
             markdown=True,
-            show_tool_calls=True,
+            # show_tool_calls=True,
             retries=3,
-            memory=Memory(),  # Use Memory v2 for better multi-session support
+            # memory=Memory(),  # Use Memory v2 for better multi-session support
             add_history_to_messages=True,  # Include conversation history
             num_history_runs=5,  # Keep track of the last 5 interactions
         )
