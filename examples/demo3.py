@@ -7,7 +7,7 @@ from textwrap import dedent
 from agno.agent import Agent 
 from agno.models.openai import OpenAIChat
 from agno.tools.mcp import MCPTools 
-# from agno.memory.v2.memory import Memory
+from agno.db.sqlite import SqliteDb
 from mcp import StdioServerParameters
 from dotenv import load_dotenv
 
@@ -68,12 +68,13 @@ async def main():
     # Start the MCP Tools session
     async with MCPTools(server_params=server_params) as mcp_tools:
         print("Connected to Notion MCP server successfully!")
-        
+        db = SqliteDb(db_file="agno.db") 
         # Create the agent
         agent = Agent(
             name="NotionDocsAgent",
             model=OpenAIChat(id="gpt-4o", api_key=openai_api_key),
             tools=[mcp_tools],
+            db=db,
             description="Agent to query and modify Notion docs via MCP",
             instructions=dedent(f"""
                 You are an expert Notion assistant that helps users interact with their Notion pages.
@@ -99,8 +100,8 @@ async def main():
             markdown=True,
             # show_tool_calls=True,
             retries=3,
-            # memory=Memory(),  # Use Memory v2 for better multi-session support
-            add_history_to_messages=True,  # Include conversation history
+            enable_user_memories=True, # This enables Memory for the Agent
+            add_history_to_context=True,  # Include conversation history
             num_history_runs=5,  # Keep track of the last 5 interactions
         )
         
