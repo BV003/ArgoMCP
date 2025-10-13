@@ -167,9 +167,12 @@ python examples/demo1.py
 The result will be placed at output/antonette.md
 
 #### Demo2
-- 
+- A web application interface for the GitHub MCP Agent has been implemented, allowing users to query GitHub repository information via natural language.
+
+
+Make sure you have installed and started Docker before running.
 ```
-python examples/demo2.py
+streamlit run examples/demo2.py
 ```
 
 #### Demo3

@@ -45,7 +45,7 @@ with st.sidebar:
 
 col1, col2 = st.columns([3, 1])
 with col1:
-    repo = st.text_input("Repository", value="Shubhamsaboo/awesome-llm-apps", help="Format: owner/repo")
+    repo = st.text_input("Repository", value="facebook/react", help="Format: owner/repo")
 with col2:
     query_type = st.selectbox("Query Type", [
         "Issues", "Pull Requests", "Repository Activity", "Custom"
@@ -70,6 +70,7 @@ async def run_github_agent(message):
     if not os.getenv("OPENAI_API_KEY"):
         return "Error: OpenAI API key not provided"
     
+    # 使用 Docker 运行 GitHub MCP Server 并通过 MCP 协议与之交互
     try:
         server_params = StdioServerParameters(
             command="docker",
@@ -82,7 +83,7 @@ async def run_github_agent(message):
             env={
                 **os.environ,
                 "GITHUB_PERSONAL_ACCESS_TOKEN": os.getenv('GITHUB_TOKEN'),
-                "GITHUB_TOOLSETS": "repos,issues,pull_requests"
+                "GITHUB_TOOLSETS": "repos,issues,pull_requests" # MCP Server 提供了三个主要工具
             }
         )
         
