@@ -98,7 +98,6 @@ async def main():
                 The user's current page ID is: {page_id}
             """),
             markdown=True,
-            # show_tool_calls=True,
             retries=3,
             enable_user_memories=True, # This enables Memory for the Agent
             add_history_to_context=True,  # Include conversation history

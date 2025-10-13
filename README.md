@@ -155,10 +155,24 @@ Use fileMCP to search the local knowledge/ directory (contains 10 .md user files
 
 ```
 ./run.sh
+# or
+python examples/demo1.py
 ```
 
 The result will be placed at output/antonette.md
 
+#### Demo2
+- 
+```
+python examples/demo2.py
+```
+
+#### Demo3
+- 
+
+```
+python examples/demo3.py
+```
 ### 🤝 Contributing
 
 We welcome contributions! Whether it's:
