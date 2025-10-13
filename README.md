@@ -174,6 +174,7 @@ Make sure you have installed and started Docker before running.
 ```
 streamlit run examples/demo2.py
 ```
+![result](images/demo2.png)
 
 #### Demo3
 - 
