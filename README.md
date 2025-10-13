@@ -182,7 +182,7 @@ streamlit run examples/demo2.py
 ```
 python examples/demo3.py
 ```
-result
+Result
 ```
 Notion MCP Agent is ready! Start chatting with your Notion pages.
 
