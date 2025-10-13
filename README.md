@@ -145,6 +145,11 @@ Create a .env file in the project root directory and add your API Keys (e.g., Op
 OPENAI_API_KEY=your_api_key_here  //openai
 ARK_API_KEY=your_api_key_here //doubao
 EMBEDDING_MODEL=all-MiniLM-L6-v2
+
+githubtoken=your_api_key_here   //for demo2
+
+NOTION_API_KEY=your_api_key_here    //for demo3
+NOTION_PAGE_ID=your_page_id_here
 ```
 
 
