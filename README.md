@@ -177,10 +177,40 @@ streamlit run examples/demo2.py
 ![result](images/demo2.png)
 
 #### Demo3
-- 
+- A terminal-based interactive Notion assistant that directly manipulates Notion pages through MCP tools while using GPT to understand natural language commands and generate corresponding actions.
 
 ```
 python examples/demo3.py
+```
+result
+```
+Notion MCP Agent is ready! Start chatting with your Notion pages.
+
+Type 'exit' or 'quit' to end the conversation.
+
+ 🤖 You : what can you do
+INFO Successfully created table 'agno_sessions'                                                                                                                                   
+┏━ Message ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                                                                ┃
+┃ what can you do                                                                                                                                                                ┃
+┃                                                                                                                                                                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Response (5.9s) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                                                                ┃
+┃ I can help you interact with your Notion pages in various ways. Here are some of the things I can do:                                                                          ┃
+┃                                                                                                                                                                                ┃
+┃  1 Read Page Content: Retrieve and display the content of your Notion pages.                                                                                                   ┃
+┃  2 Search Information: Search for specific information within your Notion workspace.                                                                                           ┃
+┃  3 Add or Update Content: Insert new content or update existing content, including creating lists, tables, and other Notion blocks.                                            ┃
+┃  4 Page Management: Create new pages, update page properties, and manage page icons and covers.                                                                                ┃
+┃  5 Block Management: Retrieve, update, or delete specific blocks within a page.                                                                                                ┃
+┃  6 Database Management: Query, update, or retrieve database information.                                                                                                       ┃
+┃  7 Commenting: Add comments to specific blocks or pages and retrieve existing comments.                                                                                        ┃
+┃  8 Explain Page Structure: Provide information on how your page is structured.                                                                                                 ┃
+┃                                                                                                                                                                                ┃
+┃ If you have any specific tasks you'd like assistance with, feel free to ask!                                                                                                   ┃
+┃                                                                                                                                                                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 ### 🤝 Contributing
 
